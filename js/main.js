@@ -1,23 +1,11 @@
 (function(){
   var root = document.getElementById('codizze-root');
-  var IMAGES = {
-    HERO_MALL: 'images/marea-alta-interior.jpg',
-    MAREA_EXT1: 'images/marea-alta-exterior-1.jpg',
-    MAREA_EXT2: 'images/marea-alta-exterior-2.jpg',
-    MAREA_ISO: 'images/marea-alta-isometrico.jpg',
-    MAREA_CORTE_L: 'images/marea-alta-corte-longitudinal.jpg',
-    MAREA_CORTE_T: 'images/marea-alta-corte-transversal.jpg',
-    MAREA_CAD: 'images/marea-alta-fachada-autocad.jpg',
-    GUSTAVO: 'images/gustavo-godinez.jpg',
-    NANCY: 'images/nancy-ramirez.jpg',
-    FABRIZZIO_FACE: 'images/fabrizzio-godinez.jpg',
-    COMP_HERO: 'https://img.youtube.com/vi/4kD0kfB3zGk/hqdefault.jpg'
-  };
 
   var pages = root.querySelectorAll('.page');
   var navCenterBtns = root.querySelectorAll('#cdz-nav-center button');
   var subnavArch = document.getElementById('cdz-subnav-arch');
   var subnavFilm = document.getElementById('cdz-subnav-film');
+  var subnavRealEstate = document.getElementById('cdz-subnav-realestate');
   var navEl = document.getElementById('cdz-nav');
 
   function setActivePage(id){
@@ -38,7 +26,8 @@
     navCenterBtns.forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-branch') === branch && branch !== ''); });
     subnavArch.classList.toggle('hidden', branch !== 'architecture');
     subnavFilm.classList.toggle('hidden', branch !== 'film');
-    root.querySelectorAll('#cdz-subnav-arch button, #cdz-subnav-film button').forEach(function(b){
+    subnavRealEstate.classList.toggle('hidden', branch !== 'realestate');
+    root.querySelectorAll('#cdz-subnav-arch button, #cdz-subnav-film button, #cdz-subnav-realestate button').forEach(function(b){
       b.classList.toggle('active', b.getAttribute('data-nav') === id);
     });
     initReveal();
@@ -52,20 +41,37 @@
     navEl.classList.toggle('scrolled', window.scrollY > 40);
   }, {passive:true});
 
-  var isFine = window.matchMedia('(pointer: fine)').matches;
-  if (isFine){
-    var preview = document.getElementById('cdz-hover-preview');
-    var previewImg = document.getElementById('cdz-hover-img');
-    root.querySelectorAll('[data-preview]').forEach(function(row){
-      row.addEventListener('mouseenter', function(){
-        var key = row.getAttribute('data-preview');
-        if (IMAGES[key]) previewImg.src = IMAGES[key];
-        preview.classList.add('show');
-      });
-      row.addEventListener('mouseleave', function(){ preview.classList.remove('show'); });
-      row.addEventListener('mousemove', function(e){
-        preview.style.left = e.clientX + 'px';
-        preview.style.top = e.clientY + 'px';
+  // ---- Lead capture form (Rafael by the Sea) ----
+  // Uses Formspree (https://formspree.io) as a free, no-backend way to store submissions
+  // and email them to you. Sign up, create a form, and replace the placeholder
+  // in the form's "action" attribute in index.html with your real endpoint.
+  var leadForm = document.getElementById('cdz-lead-form');
+  if (leadForm){
+    leadForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var note = document.getElementById('cdz-lead-note');
+      var submitBtn = leadForm.querySelector('button[type="submit"]');
+      if (leadForm.getAttribute('action').indexOf('TU_ID_DE_FORMSPREE') !== -1){
+        note.textContent = 'Falta conectar el formulario — revisa el action en index.html.';
+        return;
+      }
+      submitBtn.disabled = true;
+      note.textContent = 'Enviando…';
+      fetch(leadForm.getAttribute('action'), {
+        method: 'POST',
+        body: new FormData(leadForm),
+        headers: { 'Accept': 'application/json' }
+      }).then(function(res){
+        submitBtn.disabled = false;
+        if (res.ok){
+          note.textContent = 'Gracias — te avisaremos con novedades de Rafael by the Sea.';
+          leadForm.reset();
+        } else {
+          note.textContent = 'Hubo un error. Intenta de nuevo o escríbenos directo.';
+        }
+      }).catch(function(){
+        submitBtn.disabled = false;
+        note.textContent = 'Hubo un error. Intenta de nuevo o escríbenos directo.';
       });
     });
   }

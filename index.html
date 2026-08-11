@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Codizze — Architecture &amp; Film</title>
 <meta name="description" content="Codizze — estudio de arquitectura y contenido audiovisual en Baja California."/>
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -25,6 +26,7 @@
     <button data-nav="home">Inicio</button>
     <button data-nav="arch-hub" data-branch="architecture">Architecture</button>
     <button data-nav="film-hub" data-branch="film">Film</button>
+    <button data-nav="realestate-hub" data-branch="realestate">Real Estate</button>
   </div>
   <div class="nav-right">
     <button class="nav-contact-btn" data-nav="contact">Contacto</button>
@@ -44,8 +46,11 @@
   <button data-nav="film-servicios">Servicios</button>
   <button data-nav="film-journal">Visual Journal</button>
 </div>
-
-<div class="hover-preview" id="cdz-hover-preview"><img id="cdz-hover-img" src="" alt=""/></div>
+<div class="subnav hidden" id="cdz-subnav-realestate">
+  <button data-nav="realestate-hub">Real Estate</button>
+  <button data-nav="realestate-rafael">Rafael by the Sea</button>
+  <button data-nav="realestate-servicios">Servicios</button>
+</div>
 
 <!-- ================= HOME ================= -->
 <section class="page" id="page-home" data-branch="">
@@ -66,6 +71,7 @@
       </div>
     </div>
     <div class="split-panel film-panel" data-nav="film-hub">
+      <img src="https://img.youtube.com/vi/4kD0kfB3zGk/hqdefault.jpg" data-img="COMP_HERO" alt="Codizze Film"/>
       <div class="split-arrow">↗</div>
       <div class="split-content">
         <span class="num">02</span>
@@ -74,6 +80,17 @@
       </div>
     </div>
   </div>
+
+  <div class="realestate-strip" data-nav="realestate-hub">
+    <img src="images/rafael-hero.jpg" data-img="RAFAEL_HERO" alt="Real Estate — Rafael by the Sea"/>
+    <div class="strip-content">
+      <span class="num">03</span>
+      <h2 class="serif">Real Estate</h2>
+      <div class="sub">Terrenos y desarrollos en Baja California — actualmente Rafael by the Sea, San Felipe</div>
+    </div>
+    <div class="split-arrow">↗</div>
+  </div>
+
   <footer class="site-footer">
     <span>© Codizze Group</span>
     <span>Baja California, México</span>
@@ -91,18 +108,21 @@
     </div>
   </div>
   <div class="index-list">
-    <div class="index-row" data-nav="arch-proyectos" data-preview="MAREA_EXT1">
+    <div class="index-row" data-nav="arch-proyectos">
       <div class="row-left"><span class="row-num">01</span><h3 class="serif">Proyectos</h3></div>
+      <div class="row-thumb"><img src="images/marea-alta-exterior-1.jpg" alt=""/></div>
       <span class="row-desc">Trabajo académico y de estudio</span>
       <span class="row-arrow">↗</span>
     </div>
-    <div class="index-row" data-nav="arch-equipo" data-preview="FABRIZZIO_FACE">
+    <div class="index-row" data-nav="arch-equipo">
       <div class="row-left"><span class="row-num">02</span><h3 class="serif">Equipo</h3></div>
+      <div class="row-thumb"><img src="images/fabrizzio-godinez.jpg" alt=""/></div>
       <span class="row-desc">Las personas detrás del estudio</span>
       <span class="row-arrow">↗</span>
     </div>
-    <div class="index-row" data-nav="arch-servicios" data-preview="MAREA_CAD">
+    <div class="index-row" data-nav="arch-servicios">
       <div class="row-left"><span class="row-num">03</span><h3 class="serif">Servicios</h3></div>
+      <div class="row-thumb"><img src="images/marea-alta-fachada-autocad.jpg" alt=""/></div>
       <span class="row-desc">De la idea a la documentación técnica</span>
       <span class="row-arrow">↗</span>
     </div>
@@ -155,15 +175,15 @@
     </div>
   </div>
   <div class="gallery">
-    <img data-img="HERO_MALL" alt="Pasillo interior con muros verdes"/>
-    <img data-img="MAREA_EXT1" alt="Fachada y plaza exterior"/>
+    <img src="images/marea-alta-interior.jpg" data-img="HERO_MALL" alt="Pasillo interior con muros verdes"/>
+    <img src="images/marea-alta-exterior-1.jpg" data-img="MAREA_EXT1" alt="Fachada y plaza exterior"/>
     <div class="gallery-row">
-      <img data-img="MAREA_ISO" alt="Isométrico explotado"/>
-      <img data-img="MAREA_CAD" alt="Fachada norte, AutoCAD"/>
+      <img src="images/marea-alta-isometrico.jpg" data-img="MAREA_ISO" alt="Isométrico explotado"/>
+      <img src="images/marea-alta-fachada-autocad.jpg" data-img="MAREA_CAD" alt="Fachada norte, AutoCAD"/>
     </div>
     <div class="gallery-row">
-      <img data-img="MAREA_CORTE_L" alt="Corte longitudinal"/>
-      <img data-img="MAREA_CORTE_T" alt="Corte transversal"/>
+      <img src="images/marea-alta-corte-longitudinal.jpg" data-img="MAREA_CORTE_L" alt="Corte longitudinal"/>
+      <img src="images/marea-alta-corte-transversal.jpg" data-img="MAREA_CORTE_T" alt="Corte transversal"/>
     </div>
   </div>
   <div class="pull-quote">
@@ -444,7 +464,8 @@
 
 <!-- ================= FILM HUB ================= -->
 <section class="page" id="page-film-hub" data-branch="film">
-  <div class="hub-hero no-image">
+  <div class="hub-hero">
+    <img src="https://img.youtube.com/vi/4kD0kfB3zGk/hqdefault.jpg" alt="Codizze Film"/>
     <div class="hub-hero-content">
       <span class="eyebrow">Codizze</span>
       <h1 class="serif">Film</h1>
@@ -452,8 +473,9 @@
     </div>
   </div>
   <div class="index-list">
-    <div class="index-row" data-nav="film-proyectos" data-preview="COMP_HERO">
+    <div class="index-row" data-nav="film-proyectos">
       <div class="row-left"><span class="row-num">01</span><h3 class="serif">Proyectos / Reel</h3></div>
+      <div class="row-thumb"><img src="https://img.youtube.com/vi/4kD0kfB3zGk/hqdefault.jpg" alt=""/></div>
       <span class="row-desc">Video de presentación</span>
       <span class="row-arrow">↗</span>
     </div>
@@ -528,6 +550,118 @@
   </div>
 </section>
 
+<!-- ================= REAL ESTATE HUB ================= -->
+<section class="page" id="page-realestate-hub" data-branch="realestate">
+  <div class="hub-hero">
+    <img src="images/rafael-hero.jpg" alt="Real Estate — Codizze"/>
+    <div class="hub-hero-content">
+      <span class="eyebrow">Codizze</span>
+      <h1 class="serif">Real Estate</h1>
+      <p>Comercialización y acompañamiento en terrenos y desarrollos de Baja California.</p>
+    </div>
+  </div>
+  <div class="index-list">
+    <div class="index-row" data-nav="realestate-rafael">
+      <div class="row-left"><span class="row-num">01</span><h3 class="serif">Rafael by the Sea</h3></div>
+      <div class="row-thumb"><img src="images/rafael-detail.jpg" alt=""/></div>
+      <span class="row-desc">San Felipe, Baja California</span>
+      <span class="row-arrow">↗</span>
+    </div>
+    <div class="index-row disabled">
+      <div class="row-left"><span class="row-num">02</span><h3 class="serif">Puntaluna</h3></div>
+      <span class="row-desc">Próximamente</span>
+    </div>
+    <div class="index-row" data-nav="realestate-servicios">
+      <div class="row-left"><span class="row-num">03</span><h3 class="serif">Servicios</h3></div>
+      <div class="row-thumb"><img src="images/rafael-lotes.jpg" alt=""/></div>
+      <span class="row-desc">Venta, gestión y acompañamiento</span>
+      <span class="row-arrow">↗</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REAL ESTATE: RAFAEL BY THE SEA ================= -->
+<section class="page" id="page-realestate-rafael" data-branch="realestate">
+  <div class="detail-hero">
+    <img src="images/rafael-hero.jpg" alt="Rafael by the Sea"/>
+    <div class="detail-hero-content">
+      <span class="tag serif" style="font-family:var(--sans)">Real Estate · San Felipe, B.C.</span>
+      <h1 class="serif">Rafael by the Sea</h1>
+    </div>
+  </div>
+  <div class="detail-body">
+    <div class="spec-sheet">
+      <div class="spec-item"><div class="label">Ubicación</div><div class="val">KM 178, San Felipe, B.C.</div></div>
+      <div class="spec-item"><div class="label">Acceso</div><div class="val">1.5 hrs desde Calexico</div></div>
+      <div class="spec-item"><div class="label">Financiamiento</div><div class="val">Hasta 84 meses, sin buró</div></div>
+      <div class="spec-item"><div class="label">Título</div><div class="val">Registrado, fideicomiso disponible</div></div>
+      <div class="spec-item"><div class="label">Comisión Codizze</div><div class="val">5% por lote vendido</div></div>
+    </div>
+    <div>
+      <p class="detail-intro serif">Una comunidad costera privada sobre el Mar de Cortés, pensada para retiro, inversión o segunda residencia — con acceso directo a playa, seguridad 24/7 y todos los servicios esenciales.</p>
+    </div>
+  </div>
+  <div class="gallery">
+    <img src="images/rafael-detail.jpg" data-img="RAFAEL_DETAIL" alt="Rafael by the Sea — vista al mar"/>
+    <div class="gallery-row">
+      <img src="images/rafael-lotes.jpg" data-img="RAFAEL_LOTES" alt="Lotes disponibles"/>
+      <img src="images/rafael-hero.jpg" data-img="RAFAEL_HERO2" alt="Rafael by the Sea"/>
+    </div>
+  </div>
+
+  <div class="lot-types">
+    <div class="lot-type">
+      <span class="s-num">Compact</span>
+      <h3 class="serif">340 – 700 m²</h3>
+      <p>Retiro manejable y tranquilo, vista al mar.</p>
+    </div>
+    <div class="lot-type">
+      <span class="s-num">Standard</span>
+      <h3 class="serif">700 – 1,060 m²</h3>
+      <p>Inversionistas o familias construyendo segunda casa.</p>
+    </div>
+    <div class="lot-type">
+      <span class="s-num">Premium Oceanview</span>
+      <h3 class="serif">Desde 1,100 m²</h3>
+      <p>Espacio, privacidad y la mejor vista al mar.</p>
+    </div>
+  </div>
+
+  <div class="lead-form-wrap">
+    <span class="eyebrow">Recibe más información</span>
+    <h2 class="serif">Te avisamos de nuevos lotes disponibles</h2>
+    <form id="cdz-lead-form" class="lead-form" action="https://formspree.io/f/TU_ID_DE_FORMSPREE" method="POST">
+      <input type="email" name="email" placeholder="tu@correo.com" required/>
+      <input type="hidden" name="origen" value="Rafael by the Sea — Codizze"/>
+      <button type="submit">Enviar</button>
+    </form>
+    <p class="lead-form-note" id="cdz-lead-note"></p>
+  </div>
+</section>
+
+<!-- ================= REAL ESTATE: SERVICIOS ================= -->
+<section class="page" id="page-realestate-servicios" data-branch="realestate">
+  <div class="services-wrap">
+    <span class="eyebrow">Real Estate</span>
+    <h1 class="serif">Servicios</h1>
+    <div class="service-row">
+      <div class="s-num">01</div>
+      <h3 class="serif">Venta y comercialización de lotes</h3>
+      <p>Atención directa a compradores, seguimiento de prospectos y cierre de venta en los desarrollos representados por Codizze.</p>
+    </div>
+    <div class="service-row">
+      <div class="s-num">02</div>
+      <h3 class="serif">Acompañamiento legal y financiero</h3>
+      <p>Orientación en fideicomiso, escrituración y opciones de financiamiento, junto con el desarrollador.</p>
+    </div>
+    <div class="service-row">
+      <div class="s-num">03</div>
+      <h3 class="serif">De la venta al proyecto</h3>
+      <p>Seguimiento a cada cliente para el diseño y desarrollo arquitectónico de su propiedad con Codizze Architecture.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ================= CONTACTO ================= -->
 <section class="page" id="page-contact" data-branch="">
   <div class="contact-wrap">
@@ -565,7 +699,6 @@
 </div>
 
 <script src="js/main.js"></script>
-</div>
 
 </body>
 </html>
