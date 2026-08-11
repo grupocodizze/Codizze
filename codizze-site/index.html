@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Codizze — Architecture &amp; Film</title>
+<meta name="description" content="Codizze — estudio de arquitectura y contenido audiovisual en Baja California."/>
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>html,body{margin:0;padding:0;background:#0F1209;}</style>
+</head>
+<body>
+<div id="codizze-root">
+<link rel="stylesheet" href="css/style.css">
+
+<div class="grain" id="cdz-grain"></div>
+<svg width="0" height="0" style="position:absolute">
+  <filter id="cdz-noise"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/></filter>
+</svg>
+
+<nav class="nav" id="cdz-nav">
+  <div class="nav-logo"><span class="mark">·</span>CODIZZE</div>
+  <div class="nav-center" id="cdz-nav-center">
+    <button data-nav="home">Inicio</button>
+    <button data-nav="arch-hub" data-branch="architecture">Architecture</button>
+    <button data-nav="film-hub" data-branch="film">Film</button>
+    <button data-nav="realestate-hub" data-branch="realestate">Real Estate</button>
+  </div>
+  <div class="nav-right">
+    <button class="nav-contact-btn" data-nav="contact">Contacto</button>
+  </div>
+</nav>
+
+<div class="subnav hidden" id="cdz-subnav-arch">
+  <button data-nav="arch-hub">Architecture</button>
+  <button data-nav="arch-proyectos">Proyectos</button>
+  <button data-nav="arch-equipo">Equipo</button>
+  <button data-nav="arch-servicios">Servicios</button>
+</div>
+<div class="subnav hidden" id="cdz-subnav-film">
+  <button data-nav="film-hub">Film</button>
+  <button data-nav="film-proyectos">Proyectos / Reel</button>
+  <button data-nav="film-equipo">Equipo</button>
+  <button data-nav="film-servicios">Servicios</button>
+  <button data-nav="film-journal">Visual Journal</button>
+</div>
+<div class="subnav hidden" id="cdz-subnav-realestate">
+  <button data-nav="realestate-hub">Real Estate</button>
+  <button data-nav="realestate-rafael">Rafael by the Sea</button>
+  <button data-nav="realestate-servicios">Servicios</button>
+</div>
+
+<!-- ================= HOME ================= -->
+<section class="page" id="page-home" data-branch="">
+  <div class="home-hero">
+    <span class="mark-lg">Grupo Codizze</span>
+    <h1 class="serif">Uniendo personas,<br/>creando ideas.</h1>
+    <p>Un estudio de Baja California con dos disciplinas — arquitectura y contenido audiovisual — unidas por la misma convicción: una buena idea debe poder comunicarse con claridad.</p>
+    <div class="scroll-cue"><span>Explorar</span><span class="line"></span></div>
+  </div>
+  <div class="split">
+    <div class="split-panel" data-nav="arch-hub">
+      <img src="images/marea-alta-exterior-1.jpg" data-img="MAREA_EXT1" alt="Centro Comercial Marea-Alta"/>
+      <div class="split-arrow">↗</div>
+      <div class="split-content">
+        <span class="num">01</span>
+        <h2 class="serif">Architecture</h2>
+        <div class="sub">Diseño, planos y desarrollo inmobiliario</div>
+      </div>
+    </div>
+    <div class="split-panel film-panel" data-nav="film-hub">
+      <img src="https://img.youtube.com/vi/4kD0kfB3zGk/hqdefault.jpg" data-img="COMP_HERO" alt="Codizze Film"/>
+      <div class="split-arrow">↗</div>
+      <div class="split-content">
+        <span class="num">02</span>
+        <h2 class="serif">Film</h2>
+        <div class="sub">Fotografía y video para inmuebles y desarrollos</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="realestate-strip" data-nav="realestate-hub">
+    <img src="images/rafael-hero.jpg" data-img="RAFAEL_HERO" alt="Real Estate — Rafael by the Sea"/>
+    <div class="strip-content">
+      <span class="num">03</span>
+      <h2 class="serif">Real Estate</h2>
+      <div class="sub">Terrenos y desarrollos en Baja California — actualmente Rafael by the Sea, San Felipe</div>
+    </div>
+    <div class="split-arrow">↗</div>
+  </div>
+
+  <footer class="site-footer">
+    <span>© Codizze Group</span>
+    <span>Baja California, México</span>
+  </footer>
+</section>
+
+<!-- ================= ARCHITECTURE HUB ================= -->
+<section class="page" id="page-arch-hub" data-branch="architecture">
+  <div class="hub-hero">
+    <img src="images/marea-alta-exterior-2.jpg" data-img="MAREA_EXT2" alt="Centro Comercial Marea-Alta"/>
+    <div class="hub-hero-content">
+      <span class="eyebrow">Codizze</span>
+      <h1 class="serif">Architecture</h1>
+      <p>Diseño conceptual, documentación técnica y desarrollo inmobiliario en Baja California.</p>
+    </div>
+  </div>
+  <div class="index-list">
+    <div class="index-row" data-nav="arch-proyectos">
+      <div class="row-left"><span class="row-num">01</span><h3 class="serif">Proyectos</h3></div>
+      <div class="row-thumb"><img src="images/marea-alta-exterior-1.jpg" alt=""/></div>
+      <span class="row-desc">Trabajo académico y de estudio</span>
+      <span class="row-arrow">↗</span>
+    </div>
+    <div class="index-row" data-nav="arch-equipo">
+      <div class="row-left"><span class="row-num">02</span><h3 class="serif">Equipo</h3></div>
+      <div class="row-thumb"><img src="images/fabrizzio-godinez.jpg" alt=""/></div>
+      <span class="row-desc">Las personas detrás del estudio</span>
+      <span class="row-arrow">↗</span>
+    </div>
+    <div class="index-row" data-nav="arch-servicios">
+      <div class="row-left"><span class="row-num">03</span><h3 class="serif">Servicios</h3></div>
+      <div class="row-thumb"><img src="images/marea-alta-fachada-autocad.jpg" alt=""/></div>
+      <span class="row-desc">De la idea a la documentación técnica</span>
+      <span class="row-arrow">↗</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ARCHITECTURE PROYECTOS (grid) ================= -->
+<section class="page" id="page-arch-proyectos" data-branch="architecture">
+  <div class="grid-wrap">
+    <div class="grid-header">
+      <h1 class="serif">Proyectos</h1>
+      <p>Un proyecto académico documentado a detalle, con más trabajo en desarrollo.</p>
+    </div>
+    <div class="card-grid">
+      <div class="proj-card" data-nav="arch-proyecto-marea">
+        <img src="images/marea-alta-exterior-2.jpg" data-img="MAREA_EXT2" alt="Centro Comercial Marea-Alta"/>
+        <div class="card-info">
+          <span class="tag">Proyecto académico · Centro comercial</span>
+          <h3 class="serif">Marea-Alta</h3>
+          <div class="loc">Tijuana, Baja California</div>
+        </div>
+      </div>
+      <div class="empty-card">
+        <span>Próximo proyecto</span>
+        <span>En desarrollo</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ARCHITECTURE PROYECTO DETAIL: MAREA-ALTA ================= -->
+<section class="page" id="page-arch-proyecto-marea" data-branch="architecture">
+  <div class="detail-hero">
+    <img src="images/marea-alta-exterior-2.jpg" data-img="MAREA_EXT2" alt="Centro Comercial Marea-Alta"/>
+    <div class="detail-hero-content">
+      <span class="tag serif" style="font-family:var(--sans)">Proyecto académico</span>
+      <h1 class="serif">Centro Comercial<br/>Marea-Alta</h1>
+    </div>
+  </div>
+  <div class="detail-body">
+    <div class="spec-sheet">
+      <div class="spec-item"><div class="label">Tipología</div><div class="val">Centro comercial</div></div>
+      <div class="spec-item"><div class="label">Ubicación</div><div class="val">Tijuana, Baja California</div></div>
+      <div class="spec-item"><div class="label">Carácter</div><div class="val">Proyecto académico</div></div>
+      <div class="spec-item"><div class="label">Software</div><div class="val">Revit + IA</div></div>
+      <div class="spec-item"><div class="label">Profesor</div><div class="val">Arq. César Enrique</div></div>
+    </div>
+    <div>
+      <p class="detail-intro serif">Un recorrido comercial organizado en torno a una espina peatonal cubierta, resuelto con estructura de acero y fachadas de vidrio envueltas en muros verdes — pensado para que el paisaje entre al edificio tanto como la gente.</p>
+    </div>
+  </div>
+  <div class="gallery">
+    <img src="images/marea-alta-interior.jpg" data-img="HERO_MALL" alt="Pasillo interior con muros verdes"/>
+    <img src="images/marea-alta-exterior-1.jpg" data-img="MAREA_EXT1" alt="Fachada y plaza exterior"/>
+    <div class="gallery-row">
+      <img src="images/marea-alta-isometrico.jpg" data-img="MAREA_ISO" alt="Isométrico explotado"/>
+      <img src="images/marea-alta-fachada-autocad.jpg" data-img="MAREA_CAD" alt="Fachada norte, AutoCAD"/>
+    </div>
+    <div class="gallery-row">
+      <img src="images/marea-alta-corte-longitudinal.jpg" data-img="MAREA_CORTE_L" alt="Corte longitudinal"/>
+      <img src="images/marea-alta-corte-transversal.jpg" data-img="MAREA_CORTE_T" alt="Corte transversal"/>
+    </div>
+  </div>
+  <div class="pull-quote">
+    <p class="serif">"Creo que una buena idea debe poder comunicarse con claridad."</p>
+    <cite>Fabrizzio Godinez</cite>
+  </div>
+  <div class="credits">
+    <div class="credit-item"><div class="label">Diseño y modelado</div><div class="val">Fabrizzio Godinez</div></div>
+    <div class="credit-item"><div class="label">Profesor</div><div class="val">Arq. César Enrique</div></div>
+    <div class="credit-item"><div class="label">Software</div><div class="val">Revit, V-Ray, IA</div></div>
+  </div>
+</section>
+
+<!-- ================= ARCHITECTURE EQUIPO (grid) ================= -->
+<section class="page" id="page-arch-equipo" data-branch="architecture">
+  <div class="grid-wrap">
+    <div class="grid-header">
+      <h1 class="serif">Equipo</h1>
+      <p>El estudio, por ahora, empieza con una sola persona.</p>
+    </div>
+    <div class="card-grid">
+      <div class="team-card" data-nav="arch-equipo-gustavo">
+        <img src="images/gustavo-godinez.jpg" data-img="GUSTAVO" alt="Gustavo Godinez"/>
+        <div class="card-info">
+          <span class="tag">Arquitecto Senior</span>
+          <h3 class="serif">Gustavo Godinez</h3>
+        </div>
+      </div>
+      <div class="team-card" data-nav="arch-equipo-nancy">
+        <img src="images/nancy-ramirez.jpg" data-img="NANCY" alt="Nancy Ramirez"/>
+        <div class="card-info">
+          <span class="tag">Asesora Inmobiliaria</span>
+          <h3 class="serif">Nancy Ramirez</h3>
+        </div>
+      </div>
+      <div class="team-card" data-nav="arch-equipo-fabrizzio">
+        <img src="images/fabrizzio-godinez.jpg" data-img="FABRIZZIO_FACE" alt="Fabrizzio Godinez"/>
+        <div class="card-info">
+          <span class="tag">Arquitecto Jr.</span>
+          <h3 class="serif">Fabrizzio Godinez</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ARCHITECTURE EQUIPO: FABRIZZIO PROFILE ================= -->
+<section class="page" id="page-arch-equipo-fabrizzio" data-branch="architecture">
+  <div class="profile-hero">
+    <div class="profile-photo"><img src="images/fabrizzio-godinez.jpg" data-img="FABRIZZIO_FACE" alt="Fabrizzio Godinez" style="object-position: center 25%;"/></div>
+    <div class="profile-info">
+      <span class="eyebrow">Equipo</span>
+      <h1 class="serif" style="margin-top:14px">Fabrizzio Godinez</h1>
+      <div class="role">Arquitecto Jr.</div>
+      <p class="bio">Soy estudiante de Arquitectura apasionado por el diseño humano, la sustentabilidad, la cultura, la representación arquitectónica y el desarrollo inmobiliario. Me apasiona la representación arquitectónica porque creo que una buena idea debe poder comunicarse con claridad.</p>
+      <div class="profile-contact">
+        <a href="mailto:mark.ram.190503@gmail.com">mark.ram.190503@gmail.com</a>
+        <a href="https://wa.me/526647312233">WhatsApp +52 664 731 2233</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="profile-section">
+    <h2 class="serif">Experiencia</h2>
+    <div class="exp-item">
+      <div class="exp-date">2024 — 2025</div>
+      <div>
+        <h3 class="serif">ISV Real State and Construction</h3>
+        <ul>
+          <li>Atención y seguimiento a clientes durante procesos de compra y venta</li>
+          <li>Apoyo en la comercialización de desarrollos inmobiliarios</li>
+          <li>Visitas de obra y levantamientos arquitectónicos</li>
+          <li>Colaboración en la planeación de proyectos desde etapas conceptuales</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="profile-section">
+    <h2 class="serif">Educación</h2>
+    <div class="edu-grid">
+      <div class="edu-item">
+        <div class="label">Licenciatura</div>
+        <div class="val">Lic. Arquitectura</div>
+        <div class="sub">Universidad de Tijuana — en curso, fin 2027</div>
+      </div>
+      <div class="edu-item">
+        <div class="label">Certificado adicional</div>
+        <div class="val">CSWA — Certified SolidWorks Associate</div>
+        <div class="sub">En curso</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="profile-section">
+    <h2 class="serif">Habilidades</h2>
+    <div class="skills-cols">
+      <div class="skills-col">
+        <h4>Software</h4>
+        <ul>
+          <li>AutoCAD (2D y 3D)</li><li>Revit (básico)</li><li>SketchUp</li><li>V-Ray</li>
+          <li>SolidWorks</li><li>QGIS</li><li>Photoshop</li><li>Excel</li>
+        </ul>
+      </div>
+      <div class="skills-col">
+        <h4>Arquitectura</h4>
+        <ul>
+          <li>Dibujo arquitectónico</li><li>Elaboración de planos</li><li>Diseño conceptual</li>
+          <li>Distribución de espacios</li><li>Levantamientos arquitectónicos</li><li>Visitas de obra</li>
+        </ul>
+      </div>
+      <div class="skills-col">
+        <h4>Desarrollo inmobiliario</h4>
+        <ul>
+          <li>Análisis de propiedades</li><li>Estudios de mercado</li><li>Atención al cliente</li>
+          <li>Comercialización</li><li>Seguimiento de prospectos</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="profile-section">
+    <h2 class="serif">Idiomas</h2>
+    <div class="edu-grid">
+      <div class="edu-item"><div class="label">Español</div><div class="val">Nativo</div></div>
+      <div class="edu-item"><div class="label">Inglés</div><div class="val">Nivel B2 — intermedio alto</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ARCHITECTURE EQUIPO: GUSTAVO PROFILE ================= -->
+<section class="page" id="page-arch-equipo-gustavo" data-branch="architecture">
+  <div class="profile-hero">
+    <div class="profile-photo"><img src="images/gustavo-godinez.jpg" data-img="GUSTAVO" alt="Gustavo Godinez" style="object-position: center 20%;"/></div>
+    <div class="profile-info">
+      <span class="eyebrow">Equipo</span>
+      <h1 class="serif" style="margin-top:14px">Gustavo Godinez</h1>
+      <div class="role">Arquitecto Senior</div>
+      <p class="bio">Profesional de la construcción con amplia experiencia en supervisión mecánica, montaje estructural y proyectos de infraestructura a gran escala. Capacidad demostrada para gestionar equipos multidisciplinarios, supervisar la asignación de recursos y garantizar la ejecución de proyectos alineada con los objetivos técnicos y financieros.</p>
+      <div class="profile-contact">
+        <a href="https://linkedin.com/in/gustavo-godinez" target="_blank" rel="noopener">LinkedIn — gustavo godinez</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="profile-section">
+    <h2 class="serif">Experiencia</h2>
+    <div class="exp-item">
+      <div class="exp-date">2024 — 2026</div>
+      <div>
+        <h3 class="serif">Supervisor Mecánico — Techint, Monterrey</h3>
+        <ul>
+          <li>Montaje de estructuras metálicas para la planta de Ternium</li>
+          <li>Apoyo en la logística y coordinación para el suministro de equipos mecánicos</li>
+          <li>Operaciones del taller, fabricación y entrega de componentes estructurales</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-date">2017 — 2020</div>
+      <div>
+        <h3 class="serif">Jefe de Obra — Mota-Engil, Ciudad de México</h3>
+        <ul>
+          <li>Perforaciones para extracción de biogás, desvíos de canales y sistemas de recolección de lixiviados</li>
+          <li>Coordinación con equipos multidisciplinarios en soluciones técnicas y de ingeniería</li>
+          <li>Asignado al proyecto del Bordo Poniente</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-date">2007 — 2012</div>
+      <div>
+        <h3 class="serif">Superintendente — EMYCSA, Chihuahua</h3>
+        <ul>
+          <li>Montaje de estructuras metálicas e instalación de cubiertas y muros para naves industriales y centros comerciales</li>
+          <li>Administración de recursos, cronogramas y estimaciones de progreso</li>
+          <li>Supervisión de la instalación de aproximadamente 20 mil toneladas de acero</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="profile-section">
+    <h2 class="serif">Educación</h2>
+    <div class="edu-grid">
+      <div class="edu-item">
+        <div class="label">Licenciatura</div>
+        <div class="val">Arquitecto</div>
+        <div class="sub">Escuela Profesional de Arquitectura, IUEM — 2003</div>
+      </div>
+      <div class="edu-item">
+        <div class="label">Posgrado</div>
+        <div class="val">Máster en Dirección de Negocios y Desarrollo Empresarial</div>
+        <div class="sub">Instituto Universitario del Estado de México — 2021–2023</div>
+      </div>
+      <div class="edu-item">
+        <div class="label">Diplomado</div>
+        <div class="val">Gestión de Proyectos (PMP®)</div>
+        <div class="sub">Universidad del Valle de México — 2024</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="profile-section">
+    <h2 class="serif">Habilidades</h2>
+    <div class="skills-cols">
+      <div class="skills-col">
+        <h4>Gestión</h4>
+        <ul>
+          <li>Liderazgo y coordinación de equipos</li>
+          <li>Gestión de recursos de construcción</li>
+          <li>Gestión de proyectos (PMP®)</li>
+        </ul>
+      </div>
+      <div class="skills-col">
+        <h4>Técnico</h4>
+        <ul>
+          <li>Topografía y layout</li>
+          <li>AutoCAD</li>
+          <li>Montaje estructural</li>
+        </ul>
+      </div>
+      <div class="skills-col">
+        <h4>Idiomas</h4>
+        <ul>
+          <li>Inglés — Intermedio</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ARCHITECTURE EQUIPO: NANCY PROFILE ================= -->
+<section class="page" id="page-arch-equipo-nancy" data-branch="architecture">
+  <div class="profile-hero">
+    <div class="profile-photo"><img src="images/nancy-ramirez.jpg" data-img="NANCY" alt="Nancy Ramirez" style="object-position: center 20%;"/></div>
+    <div class="profile-info">
+      <span class="eyebrow">Equipo</span>
+      <h1 class="serif" style="margin-top:14px">Nancy Ramirez</h1>
+      <div class="role">Asesora Inmobiliaria</div>
+      <p class="bio">Perfil completo próximamente.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ARCHITECTURE SERVICIOS ================= -->
+<section class="page" id="page-arch-servicios" data-branch="architecture">
+  <div class="services-wrap">
+    <span class="eyebrow">Architecture</span>
+    <h1 class="serif">Servicios</h1>
+    <div class="service-row">
+      <div class="s-num">01</div>
+      <h3 class="serif">Diseño conceptual</h3>
+      <p>Desarrollo de la idea arquitectónica desde el concepto hasta la distribución de espacios.</p>
+    </div>
+    <div class="service-row">
+      <div class="s-num">02</div>
+      <h3 class="serif">Elaboración de planos</h3>
+      <p>Documentación técnica en AutoCAD — plantas, cortes, fachadas y detalles constructivos.</p>
+    </div>
+    <div class="service-row">
+      <div class="s-num">03</div>
+      <h3 class="serif">Modelado y visualización</h3>
+      <p>Modelado 3D y renderizado fotorrealista en Revit, SketchUp y V-Ray.</p>
+    </div>
+    <div class="service-row">
+      <div class="s-num">04</div>
+      <h3 class="serif">Levantamientos y visitas de obra</h3>
+      <p>Relevamiento en sitio y seguimiento de obra durante el proceso constructivo.</p>
+    </div>
+    <div class="service-row">
+      <div class="s-num">05</div>
+      <h3 class="serif">Desarrollo inmobiliario</h3>
+      <p>Análisis de propiedades, estudios de mercado y atención a clientes en procesos de compra y venta.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FILM HUB ================= -->
+<section class="page" id="page-film-hub" data-branch="film">
+  <div class="hub-hero">
+    <img src="https://img.youtube.com/vi/4kD0kfB3zGk/hqdefault.jpg" alt="Codizze Film"/>
+    <div class="hub-hero-content">
+      <span class="eyebrow">Codizze</span>
+      <h1 class="serif">Film</h1>
+      <p>Fotografía y video aéreo para inmuebles y desarrollos inmobiliarios.</p>
+    </div>
+  </div>
+  <div class="index-list">
+    <div class="index-row" data-nav="film-proyectos">
+      <div class="row-left"><span class="row-num">01</span><h3 class="serif">Proyectos / Reel</h3></div>
+      <div class="row-thumb"><img src="https://img.youtube.com/vi/4kD0kfB3zGk/hqdefault.jpg" alt=""/></div>
+      <span class="row-desc">Video de presentación</span>
+      <span class="row-arrow">↗</span>
+    </div>
+    <div class="index-row disabled" data-nav="film-equipo">
+      <div class="row-left"><span class="row-num">02</span><h3 class="serif">Equipo</h3></div>
+      <span class="row-desc">Próximamente</span>
+    </div>
+    <div class="index-row" data-nav="film-servicios">
+      <div class="row-left"><span class="row-num">03</span><h3 class="serif">Servicios</h3></div>
+      <span class="row-desc">Fotografía y video con drone</span>
+      <span class="row-arrow">↗</span>
+    </div>
+    <div class="index-row" data-nav="film-journal">
+      <div class="row-left"><span class="row-num">04</span><h3 class="serif">Visual Journal</h3></div>
+      <span class="row-desc">Registro fotográfico</span>
+      <span class="row-arrow">↗</span>
+    </div>
+  </div>
+</section>
+
+<section class="page" id="page-film-proyectos" data-branch="film">
+  <div class="grid-wrap" style="padding-top:150px">
+    <div class="grid-header">
+      <h1 class="serif">Proyectos / Reel</h1>
+      <p>El reel de presentación de Codizze Film.</p>
+    </div>
+    <div class="yt-facade" id="cdz-yt-facade" data-video-id="4kD0kfB3zGk">
+      <img src="https://img.youtube.com/vi/4kD0kfB3zGk/hqdefault.jpg" alt="Reel Codizze Film" id="cdz-yt-thumb"/>
+      <div class="yt-play">▶</div>
+    </div>
+    <p class="yt-caption">Reel — Codizze Film</p>
+  </div>
+</section>
+<section class="page" id="page-film-equipo" data-branch="film">
+  <div class="placeholder-panel">
+    <span class="badge">En desarrollo</span>
+    <h2 class="serif">Equipo</h2>
+    <p>El equipo audiovisual de Codizze Film se dará a conocer próximamente.</p>
+  </div>
+</section>
+<section class="page" id="page-film-servicios" data-branch="film">
+  <div class="services-wrap">
+    <span class="eyebrow">Film</span>
+    <h1 class="serif">Servicios</h1>
+    <div class="service-row">
+      <div class="s-num">01</div>
+      <h3 class="serif">Fotografía inmobiliaria</h3>
+      <p>Fotografía profesional de propiedades y desarrollos, pensada para venta, renta y comercialización.</p>
+    </div>
+    <div class="service-row">
+      <div class="s-num">02</div>
+      <h3 class="serif">Video y fotografía aérea</h3>
+      <p>Tomas aéreas con drone DJI — vistas generales de terrenos, avance de obra y recorridos de propiedades.</p>
+    </div>
+    <div class="service-row">
+      <div class="s-num">03</div>
+      <h3 class="serif">Contenido para desarrollos</h3>
+      <p>Material audiovisual para la comercialización de desarrollos residenciales y comerciales.</p>
+    </div>
+  </div>
+</section>
+<section class="page" id="page-film-journal" data-branch="film">
+  <div class="grid-wrap" style="padding-top:150px">
+    <div class="grid-header">
+      <h1 class="serif">Visual Journal</h1>
+      <p>Registro fotográfico de Codizze Film — se irá actualizando con nuevo material.</p>
+    </div>
+    <div class="empty-card" style="aspect-ratio:16/7">
+      <span>Aún no hay entradas</span>
+      <span>Próximamente</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REAL ESTATE HUB ================= -->
+<section class="page" id="page-realestate-hub" data-branch="realestate">
+  <div class="hub-hero">
+    <img src="images/rafael-hero.jpg" alt="Real Estate — Codizze"/>
+    <div class="hub-hero-content">
+      <span class="eyebrow">Codizze</span>
+      <h1 class="serif">Real Estate</h1>
+      <p>Comercialización y acompañamiento en terrenos y desarrollos de Baja California.</p>
+    </div>
+  </div>
+  <div class="index-list">
+    <div class="index-row" data-nav="realestate-rafael">
+      <div class="row-left"><span class="row-num">01</span><h3 class="serif">Rafael by the Sea</h3></div>
+      <div class="row-thumb"><img src="images/rafael-detail.jpg" alt=""/></div>
+      <span class="row-desc">San Felipe, Baja California</span>
+      <span class="row-arrow">↗</span>
+    </div>
+    <div class="index-row disabled">
+      <div class="row-left"><span class="row-num">02</span><h3 class="serif">Puntaluna</h3></div>
+      <span class="row-desc">Próximamente</span>
+    </div>
+    <div class="index-row" data-nav="realestate-servicios">
+      <div class="row-left"><span class="row-num">03</span><h3 class="serif">Servicios</h3></div>
+      <div class="row-thumb"><img src="images/rafael-lotes.jpg" alt=""/></div>
+      <span class="row-desc">Venta, gestión y acompañamiento</span>
+      <span class="row-arrow">↗</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REAL ESTATE: RAFAEL BY THE SEA ================= -->
+<section class="page" id="page-realestate-rafael" data-branch="realestate">
+  <div class="detail-hero">
+    <img src="images/rafael-hero.jpg" alt="Rafael by the Sea"/>
+    <div class="detail-hero-content">
+      <span class="tag serif" style="font-family:var(--sans)">Real Estate · San Felipe, B.C.</span>
+      <h1 class="serif">Rafael by the Sea</h1>
+    </div>
+  </div>
+  <div class="detail-body">
+    <div class="spec-sheet">
+      <div class="spec-item"><div class="label">Ubicación</div><div class="val">KM 178, San Felipe, B.C.</div></div>
+      <div class="spec-item"><div class="label">Acceso</div><div class="val">1.5 hrs desde Calexico</div></div>
+      <div class="spec-item"><div class="label">Financiamiento</div><div class="val">Hasta 84 meses, sin buró</div></div>
+      <div class="spec-item"><div class="label">Título</div><div class="val">Registrado, fideicomiso disponible</div></div>
+      <div class="spec-item"><div class="label">Comisión Codizze</div><div class="val">5% por lote vendido</div></div>
+    </div>
+    <div>
+      <p class="detail-intro serif">Una comunidad costera privada sobre el Mar de Cortés, pensada para retiro, inversión o segunda residencia — con acceso directo a playa, seguridad 24/7 y todos los servicios esenciales.</p>
+    </div>
+  </div>
+  <div class="gallery">
+    <img src="images/rafael-detail.jpg" data-img="RAFAEL_DETAIL" alt="Rafael by the Sea — vista al mar"/>
+    <div class="gallery-row">
+      <img src="images/rafael-lotes.jpg" data-img="RAFAEL_LOTES" alt="Lotes disponibles"/>
+      <img src="images/rafael-hero.jpg" data-img="RAFAEL_HERO2" alt="Rafael by the Sea"/>
+    </div>
+  </div>
+
+  <div class="lot-types">
+    <div class="lot-type">
+      <span class="s-num">Compact</span>
+      <h3 class="serif">340 – 700 m²</h3>
+      <p>Retiro manejable y tranquilo, vista al mar.</p>
+    </div>
+    <div class="lot-type">
+      <span class="s-num">Standard</span>
+      <h3 class="serif">700 – 1,060 m²</h3>
+      <p>Inversionistas o familias construyendo segunda casa.</p>
+    </div>
+    <div class="lot-type">
+      <span class="s-num">Premium Oceanview</span>
+      <h3 class="serif">Desde 1,100 m²</h3>
+      <p>Espacio, privacidad y la mejor vista al mar.</p>
+    </div>
+  </div>
+
+  <div class="lead-form-wrap">
+    <span class="eyebrow">Recibe más información</span>
+    <h2 class="serif">Te avisamos de nuevos lotes disponibles</h2>
+    <form id="cdz-lead-form" class="lead-form" action="https://formspree.io/f/TU_ID_DE_FORMSPREE" method="POST">
+      <input type="email" name="email" placeholder="tu@correo.com" required/>
+      <input type="hidden" name="origen" value="Rafael by the Sea — Codizze"/>
+      <button type="submit">Enviar</button>
+    </form>
+    <p class="lead-form-note" id="cdz-lead-note"></p>
+  </div>
+</section>
+
+<!-- ================= REAL ESTATE: SERVICIOS ================= -->
+<section class="page" id="page-realestate-servicios" data-branch="realestate">
+  <div class="services-wrap">
+    <span class="eyebrow">Real Estate</span>
+    <h1 class="serif">Servicios</h1>
+    <div class="service-row">
+      <div class="s-num">01</div>
+      <h3 class="serif">Venta y comercialización de lotes</h3>
+      <p>Atención directa a compradores, seguimiento de prospectos y cierre de venta en los desarrollos representados por Codizze.</p>
+    </div>
+    <div class="service-row">
+      <div class="s-num">02</div>
+      <h3 class="serif">Acompañamiento legal y financiero</h3>
+      <p>Orientación en fideicomiso, escrituración y opciones de financiamiento, junto con el desarrollador.</p>
+    </div>
+    <div class="service-row">
+      <div class="s-num">03</div>
+      <h3 class="serif">De la venta al proyecto</h3>
+      <p>Seguimiento a cada cliente para el diseño y desarrollo arquitectónico de su propiedad con Codizze Architecture.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACTO ================= -->
+<section class="page" id="page-contact" data-branch="">
+  <div class="contact-wrap">
+    <div class="contact-left">
+      <span class="eyebrow">Contacto</span>
+      <h1 class="serif" style="margin-top:14px">Hablemos.</h1>
+      <p>Para proyectos de arquitectura, colaboraciones con Codizze Film o cualquier otra consulta, escríbenos.</p>
+    </div>
+    <div class="contact-right">
+      <div class="contact-block">
+        <div class="label">Correo — Codizze Group</div>
+        <a href="mailto:grupo.codizze@gmail.com">grupo.codizze@gmail.com</a>
+      </div>
+      <div class="contact-block">
+        <div class="label">Teléfono / WhatsApp</div>
+        <a href="https://wa.me/526647312233">+52 664 731 2233</a>
+      </div>
+      <div class="contact-block">
+        <div class="label">Contacto directo — Arquitectura</div>
+        <a href="mailto:mark.ram.190503@gmail.com">Fabrizzio Godinez</a>
+      </div>
+      <div class="contact-block">
+        <div class="label">Redes</div>
+        <div class="social-row">
+          <a href="https://www.instagram.com/codizze" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.youtube.com/@GrupoCodizze" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://www.facebook.com/codice.22.dos" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://x.com/grupo_codizze" target="_blank" rel="noopener">X</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>
